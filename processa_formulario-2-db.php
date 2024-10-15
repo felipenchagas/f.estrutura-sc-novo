@@ -1,69 +1,11 @@
-<?php<body>
-<div class="floating-button">
-  <button id="openModalBtn">Solicitar Orçamento</button>
-</div>
-
-
-<!-- Modal -->
-  <div id="contactModal" class="modal" style="display:none;">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Solicitar Orçamento</h2>
-        
-        <form action="processa_formulario.php" method="post" id="contact-form">
-          <div class="input-group">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
-          </div>
-          
-          <div class="input-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-          </div>
-          
-          <div class="input-group">
-            <label for="telefone">Telefone</label>
-            <div class="phone-fields">
-              <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required pattern="\d{2}" title="Somente números são permitidos">
-              <input type="text" id="telefone" name="telefone" placeholder="Número" maxlength="9" pattern="\d{9}" title="Somente números são permitidos" required>
-            </div>
-          </div>
-          
-          <div class="form-row">
-            <div class="input-group cidade">
-              <label for="cidade">Cidade</label>
-              <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
-            </div>
-            <div class="input-group estado">
-              <label for="estado">Estado</label>
-              <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" pattern="[A-Za-z]{2}" title="Apenas 2 letras são permitidas" required>
-            </div>
-          </div>
-          
-          <div class="input-group">
-            <label for="descricao">Descrição do Orçamento</label>
-            <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
-          </div>
-          
-          <!-- Campo Honeypot escondido -->
-          <div style="display:none;">
-            <label for="honeypot">Não preencha este campo se for humano:</label>
-            <input type="text" id="honeypot" name="honeypot">
-          </div>
-          
-          <!-- Campo Oculto para o Temporizador -->
-          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
-          
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-    </div>
+<?php
 session_start();
 
-// **⚠️ IMPORTANTE:** Desative a exibição de erros em produção por segurança
-ini_set('display_errors', 1); // Altere para 0 em produção
-ini_set('display_startup_errors', 1); // Altere para 0 em produção
-error_reporting(E_ALL); // Altere para 0 em produção
+// Para depuração, ative a exibição de erros temporariamente
+// Remova ou comente estas linhas em produção
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Inclui o PHPMailer
 require_once("novo/src/PHPMailer.php");
@@ -73,7 +15,13 @@ require_once("novo/src/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Conectar ao primeiro banco de dados (informações fornecidas)
+// Função para detectar requisição AJAX
+function is_ajax_request() {
+    return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+           strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+}
+
+// Conectar ao primeiro banco de dados
 $servidor1 = "162.214.145.189";
 $usuario1 = "empre028_felipe";
 $senha1 = "Iuh86gwt--@Z123";
@@ -89,7 +37,14 @@ $conexao2 = new mysqli($servidor2, $usuario2, $senha2, $banco2);
 
 // Verifica se a conexão foi bem-sucedida com ambos os bancos
 if ($conexao1->connect_error || $conexao2->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conexao1->connect_error . " / " . $conexao2->connect_error);
+    if (is_ajax_request()) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => 'Erro na conexão com o banco de dados.']);
+    } else {
+        // Redireciona para uma página de erro ou exibe uma mensagem
+        header('Location: error.html');
+    }
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -100,20 +55,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Captura e sanitiza os dados do formulário
-    $nome = sanitizar($_POST['nome'] ?? '');
-    $email = sanitizar($_POST['email'] ?? '');
-    $ddd = sanitizar($_POST['ddd'] ?? '');
-    $telefone = sanitizar($_POST['telefone'] ?? '');
-    $cidade = sanitizar($_POST['cidade'] ?? '');
-    $estado = sanitizar($_POST['estado'] ?? '');
-    $descricao = sanitizar($_POST['descricao'] ?? '');
-    $honeypot = sanitizar($_POST['honeypot'] ?? '');
+    $nome = sanitizar(isset($_POST['nome']) ? $_POST['nome'] : '');
+    $email = sanitizar(isset($_POST['email']) ? $_POST['email'] : '');
+    $ddd = sanitizar(isset($_POST['ddd']) ? $_POST['ddd'] : '');
+    $telefone = sanitizar(isset($_POST['telefone']) ? $_POST['telefone'] : '');
+    $cidade = sanitizar(isset($_POST['cidade']) ? $_POST['cidade'] : '');
+    $estado = sanitizar(isset($_POST['estado']) ? $_POST['estado'] : '');
+    $descricao = sanitizar(isset($_POST['descricao']) ? $_POST['descricao'] : '');
+    $honeypot = sanitizar(isset($_POST['honeypot']) ? $_POST['honeypot'] : '');
     $form_loaded_at = isset($_POST['form_loaded_at']) ? intval($_POST['form_loaded_at']) : 0;
 
     // Verificação do Honeypot
     if (!empty($honeypot)) {
         // Submissão suspeita de bot
-        header('Location: sucesso.html'); 
+        // Redireciona silenciosamente para success.html para evitar feedback aos bots
+        header('Location: successo.html');
         exit();
     }
 
@@ -121,15 +77,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $current_time = round(microtime(true) * 1000); // Tempo atual em milissegundos
     $time_diff = ($current_time - $form_loaded_at) / 1000; // diferença em segundos
 
-    if ($form_loaded_at == 0 || $time_diff < 5) {  // Se o formulário foi enviado muito rapidamente
+    if ($form_loaded_at == 0 || $time_diff < 5) {
         // Submissão suspeita de bot
-        header('Location: sucesso.html'); 
+        header('Location: successo.html');
         exit();
     }
 
-    // Validação básica dos campos (já realizada no frontend, mas reforçada aqui)
+    // Validação básica dos campos
     if (empty($nome) || empty($email) || empty($ddd) || empty($telefone) || empty($cidade) || empty($estado) || empty($descricao)) {
-        echo "Todos os campos são obrigatórios.";
+        if (is_ajax_request()) {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'Todos os campos são obrigatórios.']);
+        } else {
+            // Redireciona para uma página de erro ou exibe uma mensagem
+            header('Location: error.html');
+        }
+        exit();
+    }
+
+    // Validação do formato do e-mail
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (is_ajax_request()) {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'Endereço de e-mail inválido.']);
+        } else {
+            // Redireciona para uma página de erro ou exibe uma mensagem
+            header('Location: error.html');
+        }
         exit();
     }
 
@@ -161,21 +135,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             try {
                 // Configurações do servidor SMTP
                 $mail->isSMTP();
-                $mail->Host       = 'mail.embrafer.com';    // Endereço do servidor SMTP
+                $mail->Host       = 'mail.embrafer.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'contato@estruturametalicasc.com.br'; // Seu email no SMTP
-                $mail->Password   = 'Futgrass80802!';      // Sua senha no SMTP
-                $mail->SMTPSecure = 'tls';                  // Criptografia TLS
-                $mail->Port       = 587;                    // Porta SMTP
+                $mail->Username   = 'contato@estruturametalicapr.com.br';
+                $mail->Password   = 'Futgrass80802!'; // **ATENÇÃO:** Alterar imediatamente
+                $mail->SMTPSecure = 'tls';
+                $mail->Port       = 587;
 
                 // Remetente e destinatário
-                $mail->setFrom('contato@estruturametalicasc.com.br', 'ESTRUTURA SC Contato');
-                $mail->addAddress('contato@estruturametalicasc.com.br', 'ESTRUTURA SC'); // Email que receberá o aviso
+                $mail->setFrom('contato@estruturametalicapr.com.br', 'Embrafer Contato');
+                $mail->addAddress('contato@estruturametalicapr.com.br', 'Embrafer');
 
                 // Conteúdo do e-mail
                 $mail->isHTML(true);
                 $mail->CharSet = 'UTF-8';
-                $mail->Subject = 'Novo Contato - Site Empresarial SC';
+                $mail->Subject = 'Novo Contato - Site Empresarial';
                 $mail->Body    = "
                     <html>
                     <body>
@@ -194,22 +168,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Envia o e-mail
                 $mail->send();
 
-                // Redireciona para a página de sucesso
+                // Redireciona para successo.html
                 header('Location: sucesso.html');
                 exit();
             } catch (Exception $e) {
-                echo "Erro ao enviar e-mail: " . $mail->ErrorInfo;
+                if (is_ajax_request()) {
+                    header('Content-Type: application/json');
+                    echo json_encode(['status' => 'error', 'message' => 'Erro ao enviar e-mail.']);
+                } else {
+                    header('Location: error.html');
+                }
+                exit();
             }
         } else {
-            echo "Erro ao inserir dados no banco 1: " . $stmt1->error;
-            echo "Erro ao inserir dados no banco 2: " . $stmt2->error;
+            if (is_ajax_request()) {
+                header('Content-Type: application/json');
+                echo json_encode(['status' => 'error', 'message' => 'Erro ao inserir dados no banco de dados.']);
+            } else {
+                header('Location: error.html');
+            }
             exit();
         }
         $stmt1->close();
         $stmt2->close();
     } else {
-        echo "Erro ao preparar a consulta no banco 1: " . $conexao1->error;
-        echo "Erro ao preparar a consulta no banco 2: " . $conexao2->error;
+        if (is_ajax_request()) {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'Erro ao preparar a consulta no banco de dados.']);
+        } else {
+            header('Location: error.html');
+        }
         exit();
     }
 
@@ -217,6 +205,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexao1->close();
     $conexao2->close();
 } else {
-    echo "Método de requisição inválido.";
+    if (is_ajax_request()) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => 'Método de requisição inválido.']);
+    } else {
+        header('Location: error.html');
+    }
+    exit();
 }
 ?>

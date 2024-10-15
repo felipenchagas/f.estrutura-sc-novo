@@ -147,14 +147,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->isSMTP();
             $mail->Host       = 'mail.embrafer.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'contato@estruturametalicapr.com.br';
+            $mail->Username   = 'contato@estruturametalicasc.com.br';
             $mail->Password   = 'Futgrass80802!'; // **ATENÇÃO:** Alterar imediatamente
             $mail->SMTPSecure = 'tls';
             $mail->Port       = 587;
 
             // Remetente e destinatário
-            $mail->setFrom('contato@estruturametalicapr.com.br', 'Embrafer Contato');
-            $mail->addAddress('contato@estruturametalicapr.com.br', 'Embrafer');
+            $mail->setFrom('contato@estruturametalicasc.com.br', 'Embrafer Contato');
+            $mail->addAddress('contato@estruturametalicasc.com.br', 'Embrafer');
 
             // Conteúdo do e-mail
             $mail->isHTML(true);

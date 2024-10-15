@@ -153,13 +153,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Port       = 587;
 
             // Remetente e destinatário
-            $mail->setFrom('contato@estruturametalicasc.com.br', 'Embrafer Contato');
-            $mail->addAddress('contato@estruturametalicasc.com.br', 'Embrafer');
+            $mail->setFrom('contato@estruturametalicasc.com.br', 'ESTRUTURA SC');
+            $mail->addAddress('contato@estruturametalicasc.com.br', 'ESTRUTURA SC');
 
             // Conteúdo do e-mail
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
-            $mail->Subject = 'Novo Contato - Site Empresarial';
+            $mail->Subject = 'Novo Contato - Site ESTRUTURA SC Empresarial';
             $mail->Body    = "
                 <html>
                 <body>

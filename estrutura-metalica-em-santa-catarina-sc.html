@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Embrafer# by Estrutura Metálica/3.x [XR&CO'2017], Wed, 24 Aug 2016 23:01:19 GMT -->
+<head>
+  
+    <title>Estruturas Metálicas em Santa Catarina Estrutura</title>
+	
+	    <meta charset="utf-8">
+	
+		<meta name="keywords" content="Cobertura Metálica em Santa Catarina, Cobertura Metálica, Projetos Cobertura Metálica, Metálica Cobertura, Estrutura Metálica com Cobertura." />
+<meta name="description" content="A Embrafer, Desenvolve projetos e fabrica as Estruturas Metálicas em Santa Catarina, temos a melhor equipe de engenheiros e montaderes de Estruturas Metálicas do Brasil." /><!-- GEO E AUTHOR -->
+
+<link rel="shortcut icon" href="favicon.png">
+<meta name="author" content="empresarialweb" />
+<meta name="dc.language" content="br" />
+<meta name="geo.region" content="BR-SC" />
+<meta name="geo.placename" content="Florianópolis" />
+<meta name="geo.position" content="-27.590235; -48.546419" />
+<meta name="ICBM" content="-27.590235; -48.546419" />
+
+<meta name="robots" content="index, all"/>
+<meta name="robots" content="index, follow"/>
+<meta name="Googlebot" content="index, follow"/>
+<meta name="MSNBot" content="index,all" />
+<meta name="yahooBot" content="index,all" />
+<meta name="expires" content="never" />
+<meta name="distribution" content="Global" />
+<meta name="revisit-after" content="7" />
+<meta name="service" content="metal manufacturing structures" />
+<meta name="category" content="metallurgy"/>
+<meta name="service" content="manutenção estrutura metálica" />
+<meta name="category" content="metalurgia"/>
+<meta name="SEO" content="www.empresarialweb.com.br" />
+<meta name="country" content="all" />
+<meta name="coverage" content="Worldwide" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="fonts/fi/flaticon.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/indent.css">
+    <link rel="stylesheet" href="rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="rs-plugin/css/navigation.css">
+    <link rel="stylesheet" href="tuner/css/colorpicker.css">
+    <link rel="stylesheet" href="tuner/css/styles.css">
+
+  </head><link rel="stylesheet" href="formulario/stylescontato.css">
+  <body>
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
+
+
+<!-- Modal -->
+  <div id="contactModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Solicitar Orçamento</h2>
+        
+        <form action="processa_formulario-2-db.php" method="post" id="contact-form">
+          <div class="input-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+          </div>
+          
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <div class="phone-fields">
+              <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required pattern="\d{2}" title="Somente números são permitidos">
+              <input type="text" id="telefone" name="telefone" placeholder="Número" maxlength="9" pattern="\d{9}" title="Somente números são permitidos" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group cidade">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+            </div>
+            <div class="input-group estado">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" pattern="[A-Za-z]{2}" title="Apenas 2 letras são permitidas" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="descricao">Descrição do Orçamento</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+          </div>
+          
+          <!-- Campo Honeypot escondido -->
+          <div style="display:none;">
+            <label for="honeypot">Não preencha este campo se for humano:</label>
+            <input type="text" id="honeypot" name="honeypot">
+          </div>
+          
+          <!-- Campo Oculto para o Temporizador -->
+          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <!-- header page-->
+    <header>
+      <!-- site top panel-->
+      <div class="site-top-panel">
+        <div class="container p-relative">
+          <div class="row">
+            <div class="col-md-6 col-sm-7">
+              <!-- lang select wrapper-->
+              <div class="top-left-wrap font-3">
+                <div class="mail-top"><a href="mailto:contato@estruturametalicasc.com.br"> <i class="flaticon-suntour-email"></i>contato@estruturametalicasc.com.br</a></div><span>/</span>
+                <div class="tel-top"><a href="tel:(41) 3082-8850"> <i class="flaticon-suntour-phone"></i>(41) 3082-8850</a></div>
+              </div>
+              <!-- ! lang select wrapper-->
+            </div>
+            <div class="col-md-6 col-sm-5 text-right">
+              <div class="top-right-wrap">
+                <div class="top-login"><a href="#">Santa Catarina</a></div>
+                <div class="curr-wrap dropdown">
+                  <div>
+                    <ul>
+                      <li><a href="#" class="lang-sel icl-en">Atendimento<i class="fa fa-angle-down"></i></a>
+                        <ul>
+                          <li><a href="#">SC</a></li>
+                          <li><a href="#">PR</a></li>
+                          <li> <a href="#">RJ</a></li>
+                          <li> <a href="#">MG</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <!-- ! site top panel-->
+      <!-- Navigation panel-->
+      <nav class="main-nav js-stick">
+        <div class="full-wrapper relative clearfix container">
+          <!-- Logo ( * your text or image into link tag *)-->
+          <div class="nav-logo-wrap local-scroll"><a href="http://www.estruturametalicasc.com.br" class="logo"><img src="img/logo.png" data-at2x="img/logo.png" alt="Logo Embrafer Santa Catarina"></a></div>
+          <!-- Main Menu-->
+          <div class="inner-nav desktop-nav">
+            <ul class="clearlist">
+              <!-- Item With Sub-->
+              <li><a href="http://www.estruturametalicasc.com.br" class="mn-has-sub active">Início </a></li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li><a href="empresa-estrutura-sc.html" class="mn-has-sub">Empresa </a>
+                <!-- Sub-->
+
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li class="megamenu"><a href="#" class="mn-has-sub">Serviços <i class="fa fa-angle-down button_open"></i></a>
+                <!-- Sub-->
+                <ul class="mn-sub mn-has-multi">
+                  <li class="mn-sub-multi"><a class="mn-group-title">Estrutura</a>
+                    <ul>
+                      <li><a href="estrutura-metalica-em-santa-catarina-sc.html">Estrutura Metálica</a></li>
+                      <li><a href="cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></li>
+                    </ul>
+                  </li>
+                  <li class="mn-sub-multi"><a class="mn-group-title">Interno</a>
+                    <ul>
+                      <li><a href="mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a></li>
+                      <li><a href="escada-metalica-santa-catarina-sc.html">Escada Metálica</a></li>
+                    </ul>
+                  </li>
+                  <li class="mn-sub-multi"><a class="mn-group-title">Mão de Obra</a>
+                    <ul>
+                      <li><a href="instalacao-estrutura-santa-catarina-sc.html">Instalação de estrutura</a></li>
+                      <li><a href="manutencao-estrutural-santa-catarina-sc.html">Manutenção estrutural</a></li>
+
+                    </ul>
+                  </li>
+                </ul>
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <!-- span /-->
+              <!-- Item With Sub-->
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li><a href="galeria.html" class="mn-has-sub">Galeria </a>
+                <!-- Sub-->
+              
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item-->
+              <li><a href="contato-estrutura-metalica-sc.html">Contato</a></li>
+              <!-- End Item-->
+              <!-- Search-->
+              <li class="search"><a href="contato-estrutura-metalica-sc.html" class="mn-has-sub">Orçamento</a>
+              
+              </li>
+              <!-- End Search-->
+            </ul>
+          </div>
+          <!-- End Main Menu-->
+        </div>
+      </nav>
+      <!-- End Navigation panel-->
+    </header>
+    <!-- ! header page-->
+    <div class="content-body">
+      <div class="container page">
+        <div class="row">
+          <!-- content-->
+         <div class="col-md-8 mb-md-140">
+            <!-- Blog Post image-->
+            <div class="blog-item alt pb-20">
+              <!-- Blog Image-->
+              <div class="pic"><img src="img/estrutura/estrutura-metalica-em-santa-catarina.jpg" data-at2x="img/estrutura/estrutura-metalica-em-santa-catarina.jpg" alt="Estrutura Metálica em Santa Catarina"></div>
+              <!-- title, author...-->
+              <div class="blog-item-data clearfix">
+                <h1 class="blog-title">Estruturas Metálicas em Santa Catarina</h1>
+                
+              </div>
+              <!-- Text Intro-->
+              <p class="mb-25"><h3>Altamente especialista em Estrutura Metálica:</h3>
+As vantagens ao escolher este tipo de <b>estrutura metálica</b> são grandes. A facilidade na utilização da estrutura é uma delas, onde é preciso um número bem reduzido de homens para realizar a obra quando comparado com as demais estruturas, isso por si só já reduz os custos da obra.</p>
+
+<h3>Estrutura metálica em Santa Catarina SC</h3>
+<p>
+Quando comparamos a velocidade para a montagem de uma <strong>estrutura metálica em Santa Catarina</strong>, com outro tipo de estrutura, o tempo para finalização pode chegar a ser 50% menor.
+Qualidade e economia para seu bolso, menor número de funcionários, tempo para finalização menor. Esses dois itens já garantem uma economia lógica para o seu investimento.
+Além de tudo uma vantagem bastante relevante neste tipo de tecnologia é o reaproveitamento, quando finalizado a estrutura pode ser desmontada para que o material seja reaproveitado em outros lugares.
+ </p>
+              <!-- Blockquote-->
+             
+              <!-- Text Intro-->
+              <p class="mb-30"><b>A SUSTENTABILIDADE DAS ESTRUTURAS METÁLICAS:</b><br />
+Em resumo o desenvolvimento sustentável é essencial hoje. Isso implica em todos os setores da sociedade atual. A indústria da construção tem um papel fundamental no desenvolvimento sustentável. Não apenas pela sua contribuição na economia, mas o mais importante, os impactos significativos em termos ambientais como também sociais.
+
+</p>
+			     <p class="mb-30">O aço é identificado como um material amigo do ambiente. Isso pelo seu potencial de reaproveitamento. 
+Isso torna a <b>estrutura metálica em Santa Catarina</b> imbatível quando a empresa presa pela sustentabilidade. Isso é visível no canteiro de obra, em uma <b>estrutura</b> comum há muito desperdício de material, como areia e demais detritos. A organização na hora da montagem é visível no canteiro de obras.</p>
+<h4>Estrutura metálica</h4>
+<p>
+A <strong>Estrutura metálica SC</strong> é adotada por grandes empresas que visam, velocidade, economia, segurança, durabilidade e sustentabilidade.
+Sim a estrutura metálica, é um modelo sustentável, cujo qual é imbatível neste quesito! 
+Material de qualidade, durável e de fácil manutenção.
+</p>
+				  
+              <!-- Post Tags-->
+             <div class="row">
+                <div class="owl-two-item">
+				
+				                  <div class="shop-item">
+                    <!-- Shop Image-->
+                    <div class="shop-media">
+                      <div class="pic"><img src="img/estrutura/estrutura-metalica-sc.jpg" data-at2x="img/estrutura/estrutura-metalica-sc.jpg" alt="Estrutura Metálica SC"></div>
+                      <div class="location">Escadas Metálicas</div>
+                    </div>
+                    <!-- Shop Content-->
+                    <div class="shop-item-body"><a href="contato-estrutura-metalica-sc.html">
+                        <h6 class="shop-title">Projetos e Estruturas</h6></a>
+                      <div class="stars stars-5"></div>
+                      <div class="shop-price">PR </div>
+                      <p class="mb-30">Estrutura Metálica é a nossa especialidade, pode contar conosco para qualquer tipo de projeto.</p><a href="estrutura-metalica-em-santa-catarina-sc.html" class="shop-button">Estrutura Metálica</a>
+                     
+                      <div class="action font-2">SC</div>
+                    </div>
+                    <div class="link"> <a href="img/estrutura/estrutura-metalica-sc-g.jpg" class="fancy"><i class="fa fa-expand"></i></a></div>
+                  </div>
+                  <!-- product-->
+                
+                  <!-- ! product-->
+				   <div class="shop-item">
+                    <!-- Shop Image-->
+                    <div class="shop-media">
+                      <div class="pic"><img src="img/estrutura/estrutura-metalica.jpg" data-at2x="img/estrutura/estrutura-metalica.jpg" alt="Estrutura Metálica Embrafer SC"></div>
+                      <div class="location">Estrutura Metálica</div>
+                    </div>
+                    <!-- Shop Content-->
+                    <div class="shop-item-body"><a href="#">
+                        <h6 class="shop-title">Estrutura Metálica SC</h6></a>
+                      <div class="stars stars-4"></div>
+                      <div class="shop-price"> BR </div>
+                      <p class="mb-30">Projetamos, fabricamos e instalamos <b>Estruturas Metálicas</b> em Todo o Brasil..</p><a href="contato-estrutura-metalica-sc.html" class="shop-button">Contato</a>
+                      <div class="price-review"><a href="#" class="cws-button small alt add-to-cart">Orçamento</a><a href="contato-estrutura-metalica-sc.html" class="cws-button small alt added-to-cart">Orçamento</a></div>
+                      <div class="action font-2">SC</div>
+                      <div class="action sale font-2">BR</div>
+                    </div>
+                    <div class="link"> <a href="img/estrutura/estrutura-metalica-g.jpg" class="fancy"><i class="fa fa-expand"></i></a></div>
+                  </div>
+				  
+	
+                  <!-- product-->
+
+                  <!-- ! product-->
+                  <!-- product-->
+                 
+                  <!-- ! product-->
+                </div>
+              </div>
+            </div>
+            <!-- Blog Testimonials-->
+          
+            <!-- Leave a comment-->
+            
+           
+          </div>
+          <!-- ! content-->
+          <!-- sidebar-->
+          <div class="col-md-4 sidebar">
+            <aside class="sb-left pb-50-imp">
+              <!-- widget search-->
+              <div class="cws-widget">
+                <div class="widget-search">
+                  <form role="search" method="get" action="#" class="search-form">
+                    <label><span class="screen-reader-text">O que procura?</span>
+                      <input type="search" placeholder="O que procura?" value="" name="s" title="Search:" class="search-field">
+                    </label>
+                    <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
+                  </form>
+                </div>
+              </div>
+              <!-- ! widget search-->
+              <!-- widget category-->
+              <div class="cws-widget">
+                <div class="widget-categories">
+                  <h2 class="widget-title">Serviços</h2>
+              <ul>
+			  <div style="overflow:auto; width:300px; height:230px;">
+                      <li><a href="estrutura-metalica-em-santa-catarina-sc.html">Estrutura Metálica</a></li>
+                      <li><a href="cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></li>
+
+                      <li><a href="mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a></li>
+                      <li><a href="escada-metalica-santa-catarina-sc.html">Escada Metálica</a></li>
+
+                      <li><a href="instalacao-estrutura-santa-catarina-sc.html">Instalação de estrutura</a></li>
+                      <li><a href="manutencao-estrutural-santa-catarina-sc.html">Manutenção estrutural</a></li>
+
+					  <li><a href="sc/estrutura-metalica-em-abdon-batista.html">Abdon Batista</a></li>
+<li><a href="sc/estrutura-metalica-em-abelardo-luz.html">Abelardo Luz</a></li>
+<li><a href="sc/estrutura-metalica-em-agrolandia.html">Agrolândia</a></li>
+<li><a href="sc/estrutura-metalica-em-agronomica.html">Agronômica</a></li>
+<li><a href="sc/estrutura-metalica-em-agua-doce.html">Água Doce</a></li>
+<li><a href="sc/estrutura-metalica-em-aguas-de-chapeco.html">Águas de Chapecó</a></li>
+<li><a href="sc/estrutura-metalica-em-aguas-frias.html">Águas Frias</a></li>
+<li><a href="sc/estrutura-metalica-em-aguas-mornas.html">Águas Mornas</a></li>
+<li><a href="sc/estrutura-metalica-em-alfredo-wagner.html">Alfredo Wagner</a></li>
+<li><a href="sc/estrutura-metalica-em-alto-bela-vista.html">Alto Bela Vista</a></li>
+<li><a href="sc/estrutura-metalica-em-anchieta.html">Anchieta</a></li>
+<li><a href="sc/estrutura-metalica-em-angelina.html">Angelina</a></li>
+<li><a href="sc/estrutura-metalica-em-anita-garibaldi.html">Anita Garibaldi</a></li>
+<li><a href="sc/estrutura-metalica-em-anitapolis.html">Anitápolis</a></li>
+<li><a href="sc/estrutura-metalica-em-antonio-carlos.html">Antônio Carlos</a></li>
+<li><a href="sc/estrutura-metalica-em-apiuna.html">Apiúna</a></li>
+<li><a href="sc/estrutura-metalica-em-arabuta.html">Arabutã</a></li>
+<li><a href="sc/estrutura-metalica-em-araquari.html">Araquari</a></li>
+<li><a href="sc/estrutura-metalica-em-ararangua.html">Araranguá</a></li>
+<li><a href="sc/estrutura-metalica-em-armazem.html">Armazém</a></li>
+<li><a href="sc/estrutura-metalica-em-arroio-trinta.html">Arroio Trinta</a></li>
+<li><a href="sc/estrutura-metalica-em-arvoredo.html">Arvoredo</a></li>
+<li><a href="sc/estrutura-metalica-em-ascurra.html">Ascurra</a></li>
+<li><a href="sc/estrutura-metalica-em-atalanta.html">Atalanta</a></li>
+<li><a href="sc/estrutura-metalica-em-aurora.html">Aurora</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-arroio-do-silva.html">Balneário Arroio do Silva</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-barra-do-sul.html">Balneário Barra do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-camboriu.html">Balneário Camboriú</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-gaivota.html">Balneário Gaivota</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-picarras.html">Balneário Piçarras</a></li>
+<li><a href="sc/estrutura-metalica-em-balneario-rincao.html">Balneário Rincão</a></li>
+<li><a href="sc/estrutura-metalica-em-bandeirante.html">Bandeirante</a></li>
+<li><a href="sc/estrutura-metalica-em-barra-bonita.html">Barra Bonita</a></li>
+<li><a href="sc/estrutura-metalica-em-barra-velha.html">Barra Velha</a></li>
+<li><a href="sc/estrutura-metalica-em-bela-vista-do-toldo.html">Bela Vista do Toldo</a></li>
+<li><a href="sc/estrutura-metalica-em-belmonte.html">Belmonte</a></li>
+<li><a href="sc/estrutura-metalica-em-benedito-novo.html">Benedito Novo</a></li>
+<li><a href="sc/estrutura-metalica-em-biguacu.html">Biguaçu</a></li>
+<li><a href="sc/estrutura-metalica-em-blumenau.html">Blumenau</a></li>
+<li><a href="sc/estrutura-metalica-em-bocaina-do-sul.html">Bocaina do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-bom-jardim-da-serra.html">Bom Jardim da Serra</a></li>
+<li><a href="sc/estrutura-metalica-em-bom-jesus.html">Bom Jesus</a></li>
+<li><a href="sc/estrutura-metalica-em-bom-jesus-do-oeste.html">Bom Jesus do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-bom-retiro.html">Bom Retiro</a></li>
+<li><a href="sc/estrutura-metalica-em-bombinhas.html">Bombinhas</a></li>
+<li><a href="sc/estrutura-metalica-em-botuvera.html">Botuverá</a></li>
+<li><a href="sc/estrutura-metalica-em-braco-do-norte.html">Braço do Norte</a></li>
+<li><a href="sc/estrutura-metalica-em-braco-do-trombudo.html">Braço do Trombudo</a></li>
+<li><a href="sc/estrutura-metalica-em-brunopolis.html">Brunópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-brusque.html">Brusque</a></li>
+<li><a href="sc/estrutura-metalica-em-cacador.html">Caçador</a></li>
+<li><a href="sc/estrutura-metalica-em-caibi.html">Caibi</a></li>
+<li><a href="sc/estrutura-metalica-em-calmon.html">Calmon</a></li>
+<li><a href="sc/estrutura-metalica-em-camboriu.html">Camboriú</a></li>
+<li><a href="sc/estrutura-metalica-em-campo-alegre.html">Campo Alegre</a></li>
+<li><a href="sc/estrutura-metalica-em-campo-belo-do-sul.html">Campo Belo do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-campo-ere.html">Campo Erê</a></li>
+<li><a href="sc/estrutura-metalica-em-campos-novos.html">Campos Novos</a></li>
+<li><a href="sc/estrutura-metalica-em-canelinha.html">Canelinha</a></li>
+<li><a href="sc/estrutura-metalica-em-canoinhas.html">Canoinhas</a></li>
+<li><a href="sc/estrutura-metalica-em-capao-alto.html">Capão Alto</a></li>
+<li><a href="sc/estrutura-metalica-em-capinzal.html">Capinzal</a></li>
+<li><a href="sc/estrutura-metalica-em-capivari-de-baixo.html">Capivari de Baixo</a></li>
+<li><a href="sc/estrutura-metalica-em-catanduvas.html">Catanduvas</a></li>
+<li><a href="sc/estrutura-metalica-em-caxambu-do-sul.html">Caxambu do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-celso-ramos.html">Celso Ramos</a></li>
+<li><a href="sc/estrutura-metalica-em-cerro-negro.html">Cerro Negro</a></li>
+<li><a href="sc/estrutura-metalica-em-chapadao-do-lageado.html">Chapadão do Lageado</a></li>
+<li><a href="sc/estrutura-metalica-em-chapeco.html">Chapecó</a></li>
+<li><a href="sc/estrutura-metalica-em-cocal-do-sul.html">Cocal do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-concordia.html">Concórdia</a></li>
+<li><a href="sc/estrutura-metalica-em-cordilheira-alta.html">Cordilheira Alta</a></li>
+<li><a href="sc/estrutura-metalica-em-coronel-freitas.html">Coronel Freitas</a></li>
+<li><a href="sc/estrutura-metalica-em-coronel-martins.html">Coronel Martins</a></li>
+<li><a href="sc/estrutura-metalica-em-correia-pinto.html">Correia Pinto</a></li>
+<li><a href="sc/estrutura-metalica-em-corupa.html">Corupá</a></li>
+<li><a href="sc/estrutura-metalica-em-criciuma.html">Criciúma</a></li>
+<li><a href="sc/estrutura-metalica-em-cunha-pora.html">Cunha Porã</a></li>
+<li><a href="sc/estrutura-metalica-em-cunhatai.html">Cunhataí</a></li>
+<li><a href="sc/estrutura-metalica-em-curitibanos.html">Curitibanos</a></li>
+<li><a href="sc/estrutura-metalica-em-descanso.html">Descanso</a></li>
+<li><a href="sc/estrutura-metalica-em-dionisio-cerqueira.html">Dionísio Cerqueira</a></li>
+<li><a href="sc/estrutura-metalica-em-dona-emma.html">Dona Emma</a></li>
+<li><a href="sc/estrutura-metalica-em-doutor-pedrinho.html">Doutor Pedrinho</a></li>
+<li><a href="sc/estrutura-metalica-em-entre-rios.html">Entre Rios</a></li>
+<li><a href="sc/estrutura-metalica-em-ermo.html">Ermo</a></li>
+<li><a href="sc/estrutura-metalica-em-erval-velho.html">Erval Velho</a></li>
+<li><a href="sc/estrutura-metalica-em-faxinal-dos-guedes.html">Faxinal dos Guedes</a></li>
+<li><a href="sc/estrutura-metalica-em-flor-do-sertao.html">Flor do Sertão</a></li>
+<li><a href="sc/estrutura-metalica-em-florianopolis.html">Florianópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-formosa-do-sul.html">Formosa do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-forquilhinha.html">Forquilhinha</a></li>
+<li><a href="sc/estrutura-metalica-em-fraiburgo.html">Fraiburgo</a></li>
+<li><a href="sc/estrutura-metalica-em-frei-rogerio.html">Frei Rogério</a></li>
+<li><a href="sc/estrutura-metalica-em-galvao.html">Galvão</a></li>
+<li><a href="sc/estrutura-metalica-em-garopaba.html">Garopaba</a></li>
+<li><a href="sc/estrutura-metalica-em-garuva.html">Garuva</a></li>
+<li><a href="sc/estrutura-metalica-em-gaspar.html">Gaspar</a></li>
+<li><a href="sc/estrutura-metalica-em-governador-celso-ramos.html">Governador Celso Ramos</a></li>
+<li><a href="sc/estrutura-metalica-em-grao-para.html">Grão Pará</a></li>
+<li><a href="sc/estrutura-metalica-em-gravatal.html">Gravatal</a></li>
+<li><a href="sc/estrutura-metalica-em-guabiruba.html">Guabiruba</a></li>
+<li><a href="sc/estrutura-metalica-em-guaraciaba.html">Guaraciaba</a></li>
+<li><a href="sc/estrutura-metalica-em-guaramirim.html">Guaramirim</a></li>
+<li><a href="sc/estrutura-metalica-em-guaruja-do-sul.html">Guarujá do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-guatambu.html">Guatambú</a></li>
+<li><a href="sc/estrutura-metalica-em-herval-d-oeste.html">Herval d Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-ibiam.html">Ibiam</a></li>
+<li><a href="sc/estrutura-metalica-em-ibicare.html">Ibicaré</a></li>
+<li><a href="sc/estrutura-metalica-em-ibirama.html">Ibirama</a></li>
+<li><a href="sc/estrutura-metalica-em-icara.html">Içara</a></li>
+<li><a href="sc/estrutura-metalica-em-ilhota.html">Ilhota</a></li>
+<li><a href="sc/estrutura-metalica-em-imarui.html">Imaruí</a></li>
+<li><a href="sc/estrutura-metalica-em-imbituba.html">Imbituba</a></li>
+<li><a href="sc/estrutura-metalica-em-imbuia.html">Imbuia</a></li>
+<li><a href="sc/estrutura-metalica-em-indaial.html">Indaial</a></li>
+<li><a href="sc/estrutura-metalica-em-iomere.html">Iomerê</a></li>
+<li><a href="sc/estrutura-metalica-em-ipira.html">Ipira</a></li>
+<li><a href="sc/estrutura-metalica-em-ipora-do-oeste.html">Iporã do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-ipuacu.html">Ipuaçu</a></li>
+<li><a href="sc/estrutura-metalica-em-ipumirim.html">Ipumirim</a></li>
+<li><a href="sc/estrutura-metalica-em-iraceminha.html">Iraceminha</a></li>
+<li><a href="sc/estrutura-metalica-em-irani.html">Irani</a></li>
+<li><a href="sc/estrutura-metalica-em-irati.html">Irati</a></li>
+<li><a href="sc/estrutura-metalica-em-irineopolis.html">Irineópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-ita.html">Itá</a></li>
+<li><a href="sc/estrutura-metalica-em-itaiopolis.html">Itaiópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-itajai.html">Itajaí</a></li>
+<li><a href="sc/estrutura-metalica-em-itapema.html">Itapema</a></li>
+<li><a href="sc/estrutura-metalica-em-itapiranga.html">Itapiranga</a></li>
+<li><a href="sc/estrutura-metalica-em-itapoa.html">Itapoá</a></li>
+<li><a href="sc/estrutura-metalica-em-ituporanga.html">Ituporanga</a></li>
+<li><a href="sc/estrutura-metalica-em-jabora.html">Jaborá</a></li>
+<li><a href="sc/estrutura-metalica-em-jacinto-machado.html">Jacinto Machado</a></li>
+<li><a href="sc/estrutura-metalica-em-jaguaruna.html">Jaguaruna</a></li>
+<li><a href="sc/estrutura-metalica-em-jaragua-do-sul.html">Jaraguá do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-jardinopolis.html">Jardinópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-joacaba.html">Joaçaba</a></li>
+<li><a href="sc/estrutura-metalica-em-joinville.html">Joinville</a></li>
+<li><a href="sc/estrutura-metalica-em-jose-boiteux.html">José Boiteux</a></li>
+<li><a href="sc/estrutura-metalica-em-jupia.html">Jupiá</a></li>
+<li><a href="sc/estrutura-metalica-em-lacerdopolis.html">Lacerdópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-lages.html">Lages</a></li>
+<li><a href="sc/estrutura-metalica-em-laguna.html">Laguna</a></li>
+<li><a href="sc/estrutura-metalica-em-lajeado-grande.html">Lajeado Grande</a></li>
+<li><a href="sc/estrutura-metalica-em-laurentino.html">Laurentino</a></li>
+<li><a href="sc/estrutura-metalica-em-lauro-muller.html">Lauro Muller</a></li>
+<li><a href="sc/estrutura-metalica-em-lebon-regis.html">Lebon Régis</a></li>
+<li><a href="sc/estrutura-metalica-em-leoberto-leal.html">Leoberto Leal</a></li>
+<li><a href="sc/estrutura-metalica-em-lindoia-do-sul.html">Lindóia do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-lontras.html">Lontras</a></li>
+<li><a href="sc/estrutura-metalica-em-luiz-alves.html">Luiz Alves</a></li>
+<li><a href="sc/estrutura-metalica-em-luzerna.html">Luzerna</a></li>
+<li><a href="sc/estrutura-metalica-em-macieira.html">Macieira</a></li>
+<li><a href="sc/estrutura-metalica-em-mafra.html">Mafra</a></li>
+<li><a href="sc/estrutura-metalica-em-major-gercino.html">Major Gercino</a></li>
+<li><a href="sc/estrutura-metalica-em-major-vieira.html">Major Vieira</a></li>
+<li><a href="sc/estrutura-metalica-em-maracaja.html">Maracajá</a></li>
+<li><a href="sc/estrutura-metalica-em-maravilha.html">Maravilha</a></li>
+<li><a href="sc/estrutura-metalica-em-marema.html">Marema</a></li>
+<li><a href="sc/estrutura-metalica-em-massaranduba.html">Massaranduba</a></li>
+<li><a href="sc/estrutura-metalica-em-matos-costa.html">Matos Costa</a></li>
+<li><a href="sc/estrutura-metalica-em-meleiro.html">Meleiro</a></li>
+<li><a href="sc/estrutura-metalica-em-mirim-doce.html">Mirim Doce</a></li>
+<li><a href="sc/estrutura-metalica-em-modelo.html">Modelo</a></li>
+<li><a href="sc/estrutura-metalica-em-mondai.html">Mondaí</a></li>
+<li><a href="sc/estrutura-metalica-em-monte-carlo.html">Monte Carlo</a></li>
+<li><a href="sc/estrutura-metalica-em-monte-castelo.html">Monte Castelo</a></li>
+<li><a href="sc/estrutura-metalica-em-morro-da-fumaca.html">Morro da Fumaça</a></li>
+<li><a href="sc/estrutura-metalica-em-morro-grande.html">Morro Grande</a></li>
+<li><a href="sc/estrutura-metalica-em-navegantes.html">Navegantes</a></li>
+<li><a href="sc/estrutura-metalica-em-nova-erechim.html">Nova Erechim</a></li>
+<li><a href="sc/estrutura-metalica-em-nova-itaberaba.html">Nova Itaberaba</a></li>
+<li><a href="sc/estrutura-metalica-em-nova-trento.html">Nova Trento</a></li>
+<li><a href="sc/estrutura-metalica-em-nova-veneza.html">Nova Veneza</a></li>
+<li><a href="sc/estrutura-metalica-em-novo-horizonte.html">Novo Horizonte</a></li>
+<li><a href="sc/estrutura-metalica-em-orleans.html">Orleans</a></li>
+<li><a href="sc/estrutura-metalica-em-otacilio-costa.html">Otacílio Costa</a></li>
+<li><a href="sc/estrutura-metalica-em-ouro.html">Ouro</a></li>
+<li><a href="sc/estrutura-metalica-em-ouro-verde.html">Ouro Verde</a></li>
+<li><a href="sc/estrutura-metalica-em-paial.html">Paial</a></li>
+<li><a href="sc/estrutura-metalica-em-painel.html">Painel</a></li>
+<li><a href="sc/estrutura-metalica-em-palhoca.html">Palhoça</a></li>
+<li><a href="sc/estrutura-metalica-em-palma-sola.html">Palma Sola</a></li>
+<li><a href="sc/estrutura-metalica-em-palmeira.html">Palmeira</a></li>
+<li><a href="sc/estrutura-metalica-em-palmitos.html">Palmitos</a></li>
+<li><a href="sc/estrutura-metalica-em-papanduva.html">Papanduva</a></li>
+<li><a href="sc/estrutura-metalica-em-paraiso.html">Paraíso</a></li>
+<li><a href="sc/estrutura-metalica-em-passo-de-torres.html">Passo de Torres</a></li>
+<li><a href="sc/estrutura-metalica-em-passos-maia.html">Passos Maia</a></li>
+<li><a href="sc/estrutura-metalica-em-paulo-lopes.html">Paulo Lopes</a></li>
+<li><a href="sc/estrutura-metalica-em-pedras-grandes.html">Pedras Grandes</a></li>
+<li><a href="sc/estrutura-metalica-em-penha.html">Penha</a></li>
+<li><a href="sc/estrutura-metalica-em-peritiba.html">Peritiba</a></li>
+<li><a href="sc/estrutura-metalica-em-pescaria-brava.html">Pescaria Brava</a></li>
+<li><a href="sc/estrutura-metalica-em-petrolandia.html">Petrolândia</a></li>
+<li><a href="sc/estrutura-metalica-em-pinhalzinho.html">Pinhalzinho</a></li>
+<li><a href="sc/estrutura-metalica-em-pinheiro-preto.html">Pinheiro Preto</a></li>
+<li><a href="sc/estrutura-metalica-em-piratuba.html">Piratuba</a></li>
+<li><a href="sc/estrutura-metalica-em-planalto-alegre.html">Planalto Alegre</a></li>
+<li><a href="sc/estrutura-metalica-em-pomerode.html">Pomerode</a></li>
+<li><a href="sc/estrutura-metalica-em-ponte-alta.html">Ponte Alta</a></li>
+<li><a href="sc/estrutura-metalica-em-ponte-alta-do-norte.html">Ponte Alta do Norte</a></li>
+<li><a href="sc/estrutura-metalica-em-ponte-serrada.html">Ponte Serrada</a></li>
+<li><a href="sc/estrutura-metalica-em-porto-belo.html">Porto Belo</a></li>
+<li><a href="sc/estrutura-metalica-em-porto-uniao.html">Porto União</a></li>
+<li><a href="sc/estrutura-metalica-em-pouso-redondo.html">Pouso Redondo</a></li>
+<li><a href="sc/estrutura-metalica-em-praia-grande.html">Praia Grande</a></li>
+<li><a href="sc/estrutura-metalica-em-presidente-castello-branco.html">Presidente Castello Branco</a></li>
+<li><a href="sc/estrutura-metalica-em-presidente-getulio.html">Presidente Getúlio</a></li>
+<li><a href="sc/estrutura-metalica-em-presidente-nereu.html">Presidente Nereu</a></li>
+<li><a href="sc/estrutura-metalica-em-princesa.html">Princesa</a></li>
+<li><a href="sc/estrutura-metalica-em-quilombo.html">Quilombo</a></li>
+<li><a href="sc/estrutura-metalica-em-rancho-queimado.html">Rancho Queimado</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-das-antas.html">Rio das Antas</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-do-campo.html">Rio do Campo</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-do-oeste.html">Rio do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-do-sul.html">Rio do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-dos-cedros.html">Rio dos Cedros</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-fortuna.html">Rio Fortuna</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-negrinho.html">Rio Negrinho</a></li>
+<li><a href="sc/estrutura-metalica-em-rio-rufino.html">Rio Rufino</a></li>
+<li><a href="sc/estrutura-metalica-em-riqueza.html">Riqueza</a></li>
+<li><a href="sc/estrutura-metalica-em-rodeio.html">Rodeio</a></li>
+<li><a href="sc/estrutura-metalica-em-romelandia.html">Romelândia</a></li>
+<li><a href="sc/estrutura-metalica-em-salete.html">Salete</a></li>
+<li><a href="sc/estrutura-metalica-em-saltinho.html">Saltinho</a></li>
+<li><a href="sc/estrutura-metalica-em-salto-veloso.html">Salto Veloso</a></li>
+<li><a href="sc/estrutura-metalica-em-sangao.html">Sangão</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-cecilia.html">Santa Cecília</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-helena.html">Santa Helena</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-rosa-de-lima.html">Santa Rosa de Lima</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-rosa-do-sul.html">Santa Rosa do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-terezinha.html">Santa Terezinha</a></li>
+<li><a href="sc/estrutura-metalica-em-santa-terezinha-do-progresso.html">Santa Terezinha do Progresso</a></li>
+<li><a href="sc/estrutura-metalica-em-santiago-do-sul.html">Santiago do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-santo-amaro-da-imperatriz.html">Santo Amaro da Imperatriz</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-bento-do-sul.html">São Bento do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-bernardino.html">São Bernardino</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-bonifacio.html">São Bonifácio</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-carlos.html">São Carlos</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-cristovao-do-sul.html">São Cristovão do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-domingos.html">São Domingos</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-francisco-do-sul.html">São Francisco do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-joao-batista.html">São João Batista</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-joao-do-itaperiu.html">São João do Itaperiú</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-joao-do-oeste.html">São João do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-joao-do-sul.html">São João do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-joaquim.html">São Joaquim</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-jose.html">São José</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-jose-do-cedro.html">São José do Cedro</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-jose-do-cerrito.html">São José do Cerrito</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-lourenco-do-oeste.html">São Lourenço do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-ludgero.html">São Ludgero</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-martinho.html">São Martinho</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-miguel-da-boa-vista.html">São Miguel da Boa Vista</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-miguel-do-oeste.html">São Miguel do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-sao-pedro-de-alcantara.html">São Pedro de Alcântara</a></li>
+<li><a href="sc/estrutura-metalica-em-saudades.html">Saudades</a></li>
+<li><a href="sc/estrutura-metalica-em-schroeder.html">Schroeder</a></li>
+<li><a href="sc/estrutura-metalica-em-seara.html">Seara</a></li>
+<li><a href="sc/estrutura-metalica-em-serra-alta.html">Serra Alta</a></li>
+<li><a href="sc/estrutura-metalica-em-sideropolis.html">Siderópolis</a></li>
+<li><a href="sc/estrutura-metalica-em-sombrio.html">Sombrio</a></li>
+<li><a href="sc/estrutura-metalica-em-sul-brasil.html">Sul Brasil</a></li>
+<li><a href="sc/estrutura-metalica-em-taio.html">Taió</a></li>
+<li><a href="sc/estrutura-metalica-em-tangara.html">Tangará</a></li>
+<li><a href="sc/estrutura-metalica-em-tigrinhos.html">Tigrinhos</a></li>
+<li><a href="sc/estrutura-metalica-em-tijucas.html">Tijucas</a></li>
+<li><a href="sc/estrutura-metalica-em-timbe-do-sul.html">Timbé do Sul</a></li>
+<li><a href="sc/estrutura-metalica-em-timbo.html">Timbó</a></li>
+<li><a href="sc/estrutura-metalica-em-timbo-grande.html">Timbó Grande</a></li>
+<li><a href="sc/estrutura-metalica-em-tres-barras.html">Três Barras</a></li>
+<li><a href="sc/estrutura-metalica-em-treviso.html">Treviso</a></li>
+<li><a href="sc/estrutura-metalica-em-treze-de-maio.html">Treze de Maio</a></li>
+<li><a href="sc/estrutura-metalica-em-treze-tilias.html">Treze Tílias</a></li>
+<li><a href="sc/estrutura-metalica-em-trombudo-central.html">Trombudo Central</a></li>
+<li><a href="sc/estrutura-metalica-em-tubarao.html">Tubarão</a></li>
+<li><a href="sc/estrutura-metalica-em-tunapolis.html">Tunápolis</a></li>
+<li><a href="sc/estrutura-metalica-em-turvo.html">Turvo</a></li>
+<li><a href="sc/estrutura-metalica-em-uniao-do-oeste.html">União do Oeste</a></li>
+<li><a href="sc/estrutura-metalica-em-urubici.html">Urubici</a></li>
+<li><a href="sc/estrutura-metalica-em-urupema.html">Urupema</a></li>
+<li><a href="sc/estrutura-metalica-em-urussanga.html">Urussanga</a></li>
+<li><a href="sc/estrutura-metalica-em-vargeao.html">Vargeão</a></li>
+<li><a href="sc/estrutura-metalica-em-vargem.html">Vargem</a></li>
+<li><a href="sc/estrutura-metalica-em-vargem-bonita.html">Vargem Bonita</a></li>
+<li><a href="sc/estrutura-metalica-em-vidal-ramos.html">Vidal Ramos</a></li>
+<li><a href="sc/estrutura-metalica-em-videira.html">Videira</a></li>
+<li><a href="sc/estrutura-metalica-em-vitor-meireles.html">Vitor Meireles</a></li>
+<li><a href="sc/estrutura-metalica-em-witmarsum.html">Witmarsum</a></li>
+<li><a href="sc/estrutura-metalica-em-xanxere.html">Xanxerê</a></li>
+<li><a href="sc/estrutura-metalica-em-xavantina.html">Xavantina</a></li>
+<li><a href="sc/estrutura-metalica-em-xaxim.html">Xaxim</a></li>
+<li><a href="sc/estrutura-metalica-em-zortea.html">Zortéa</a></li>
+
+					  
+					  </div>
+                    </ul>
+                </div>
+              </div>
+              <!-- ! widget category-->
+              <!-- widget top sellers-->
+              <div class="cws-widget">
+                <div class="widget-top-sellers">
+                  <h2 class="widget-title">Mais Procurados</h2>
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="img/empresa/cobertura-metalica.jpg" data-at2x="img/empresa/cobertura-metalica.jpg" alt="Cobertura Metálica">
+                    <h3 class="title"><a href="cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></h3>
+                    
+                  </div>
+                  <!-- ! item recent post-->
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="img/empresa/barracao-metalico.jpg" data-at2x="img/empresa/barracao-metalico.jpg" alt>
+                    <h3 class="title"><a href="estrutura-metalica-em-santa-catarina-sc.html">Barracão Metálico</a></h3>
+                 
+                  </div>
+                  <!-- ! item recent post-->
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="img/empresa/mezanino-metalico.jpg" data-at2x="img/empresa/mezanino-metalico.jpg" alt="Mezanino Metálico">
+                    <h3 class="title"><a href="mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a><span style="width:80%"></span></h3>
+                    
+                  </div>
+                  <!-- ! item recent post-->
+                </div>
+              </div>
+              <!-- ! widget top sellers-->
+              <!-- filter price-->
+
+              <!-- ! filter price-->
+              <!-- widget color filter-->
+              
+              <!-- widget color filter-->
+            </aside>
+          </div>
+          <!-- ! sidebar-->
+        </div>
+      </div>
+    </div>
+    <!-- footer-->
+    <footer style="background-image: url('pic/footer/footer-bg.jpg')" class="footer footer-fixed">
+      <div class="container">
+        <div class="row pb-100 pb-md-40">
+          <!-- widget footer-->
+          <div class="col-md-6 col-sm-12 mb-sm-30">
+            <div class="logo-soc clearfix">
+              <div class="footer-logo"><a href="http://www.estruturametalicasc.com.br"><img src="img/logo-white.png" data-at2x="img/logo-white.png" alt="Embrafer SC"></a></div>
+            </div>
+            <p class="color-g2 mt-10">Nossa empresa é referência em <b>estrutura metálica</b> e estamos aqui para fazer a diferença no ramo. Com profissionais capacitados e especialistas no trabalho com o aço sempre frisamos a necessidade do compromisso com o serviço a ser prestado e da qualidade do material a ser utilizado.</p>
+            <!-- social-->
+            <div class="social-link dark"><a href="#" class="cws-social fa fa-youtube"></a><a href="#" class="cws-social fa fa-facebook"></a><a href="#" class="cws-social fa fa-google-plus"></a><a href="#" class="cws-social fa fa-linkedin"></a></div>
+            <!-- ! social-->
+          </div>
+          <!-- ! widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6 mb-sm-30">
+            <div class="widget-footer">
+              <h4>Menu Rápido</h4>
+            <ul>
+			<li>
+			<a href="http://www.estruturametalicasc.com.br">Início</a></li>
+			<li><a href="empresa-estrutura-sc.html">Empresa</a></li>
+			<li><a href="galeria.html">Galeria</a></li>
+			<li><a href="contato-estrutura-metalica-sc.html">Contato</a></li>
+			
+			</ul>
+			
+            </div>
+          </div>
+          <!-- end widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6">
+            <div class="widget-footer">
+              <h4>Principais serviços</h4>
+              <div class="widget-tags-wrap"><a href="#" rel="tag" class="tag">Estrutura Metálica</a><a href="#" rel="tag" class="tag">Mezaninos</a><a href="#" rel="tag" class="tag">Cobertura Metálica</a><a href="#" rel="tag" class="tag">Escada Metálica</a><a href="#" rel="tag" class="tag">Manutenção</a><a href="#" rel="tag" class="tag">Instalação</a></div>
+            </div>
+          </div>
+          <!-- end widget footer-->
+        </div>
+      </div>
+      <!-- copyright-->
+      <div class="copyright"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>© Direitos 2016 <span>Desenvolvimento Próprio</span> &nbsp;&nbsp;|&nbsp;&nbsp; Embrafer Estrutura Metálica</p>
+            </div>
+            <div class="col-sm-6 text-right"><a href="http://www.estruturametalicasc.com.br" class="footer-nav">Início</a><a href="empresa.html" class="footer-nav">Empresa</a><a href="estrutura-metalica-em-santa-catarina-sc.html" class="footer-nav">Serviços</a><a href="galeria.html" class="footer-nav">Galeria</a><a href="contato-estrutura-metalica-sc.html" class="footer-nav">Contato</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- end copyright-->
+      <!-- scroll top-->
+    </footer>
+    <div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+    <!-- ! footer-->
+    <!-- login popup-->
+
+    <!-- ! login popup-->
+    <!-- news popup-->
+
+    <!-- ! news popup-->
+ 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/cws_parallax.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/bg-video/cws_self_vimeo_bg.js"></script>
+    <script type="text/javascript" src="js/bg-video/jquery.vimeo.api.min.js"></script>
+    <script type="text/javascript" src="js/bg-video/cws_YT_bg.js"></script>
+    <script type="text/javascript" src="js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider.js"></script>
+
+    <script type="text/javascript" src="js/retina.min.js"></script>
+  <!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script--><script src="formulario/scriptcontato.js"></script></body>
+
+<!-- Embrafer# by Estrutura Metálica/3.x [XR&CO'2017], Wed, 24 Aug 2016 23:01:36 GMT -->
+</html>

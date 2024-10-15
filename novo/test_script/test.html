@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>SyntaxHighlighter Build Test Page</title>
+  <script type="text/javascript" src="scripts/shCore.js"></script>
+  <!--
+  <script type="text/javascript" src="scripts/shBrushBash.js"></script>
+  <script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+  <script type="text/javascript" src="scripts/shBrushCSharp.js"></script>
+  <script type="text/javascript" src="scripts/shBrushCss.js"></script>
+  <script type="text/javascript" src="scripts/shBrushDelphi.js"></script>
+  <script type="text/javascript" src="scripts/shBrushDiff.js"></script>
+  <script type="text/javascript" src="scripts/shBrushGroovy.js"></script>
+  <script type="text/javascript" src="scripts/shBrushJava.js"></script>
+  <script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+  -->
+  <script type="text/javascript" src="scripts/shBrushPhp.js"></script>
+  <!--
+  <script type="text/javascript" src="scripts/shBrushPlain.js"></script>
+  <script type="text/javascript" src="scripts/shBrushPython.js"></script>
+  <script type="text/javascript" src="scripts/shBrushRuby.js"></script>
+  <script type="text/javascript" src="scripts/shBrushScala.js"></script>
+  <script type="text/javascript" src="scripts/shBrushSql.js"></script>
+  <script type="text/javascript" src="scripts/shBrushVb.js"></script>
+  <script type="text/javascript" src="scripts/shBrushXml.js"></script>
+  -->
+  <link type="text/css" rel="stylesheet" href="styles/shCore.css"/>
+  <link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css"/>
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+  </script>
+<link rel="stylesheet" href="../stylescontato.css"></head>
+
+<!-- Botão Flutuante -->
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
+
+<!-- Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Solicitar Orçamento</h2>
+    
+    <form action="../processa_formulario-2-db.php" method="post" id="contact-form">
+      <div class="input-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="telefone">Telefone</label>
+        <div class="phone-fields">
+          <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required>
+          <input type="text" id="telefone" name="telefone" placeholder="Número" required>
+        </div>
+      </div>
+      
+<div class="form-row">
+  <div class="input-group cidade">
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+  </div>
+  <div class="input-group estado">
+    <label for="estado">Estado</label>
+    <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" required>
+  </div>
+</div>
+      
+      <div class="input-group">
+        <label for="descricao">Descrição do Orçamento</label>
+        <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+      </div>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<body >
+<h1>SyntaxHihglighter Test</h1>
+<p>This is a test file to insure that everything is working well.</p>
+
+<pre class="brush: php;">
+function test() : String
+{
+  return 10;
+}
+</pre>
+</html>

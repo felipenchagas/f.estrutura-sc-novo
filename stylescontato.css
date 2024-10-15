@@ -1,0 +1,258 @@
+/* Estilos Gerais */
+/* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212; /* Fundo escuro para o corpo */
+  color: #e0e0e0; /* Texto claro */
+}
+
+/* Botão Flutuante */
+.floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.floating-button button {
+  background-color: #8a0a10; /* Azul mais escuro */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button button:hover {
+  background-color: #811abc; /* Azul mais escuro no hover */
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.4);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente escuro */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1e1e1e; /* Fundo escuro do modal */
+  margin: 5% auto;
+  padding: 30px;
+  border: none;
+  width: 90%;
+  max-width: 500px; /* Largura reduzida para desktop */
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #ffffff; /* Texto claro */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #bbbbbb; /* Cor do "X" */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ffffff; /* "X" mais claro no hover */
+}
+
+/* Estilo dos Campos de Input */
+.modal-content .input-group {
+  margin-bottom: 20px;
+}
+
+.modal-content .input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #e0e0e0; /* Labels claros */
+}
+
+.modal-content .input-group input,
+.modal-content .input-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #333333; /* Bordas mais escuras */
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #2c2c2c; /* Fundo escuro dos inputs */
+  color: #e0e0e0; /* Texto claro nos inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content .input-group input::placeholder,
+.modal-content .input-group textarea::placeholder {
+  color: #777777; /* Placeholders mais claros */
+  font-style: italic;
+}
+
+.modal-content .input-group input:focus,
+.modal-content .input-group textarea:focus {
+  border-color: #8a0a10; /* Azul no foco */
+  box-shadow: 0 0 8px rgba(31, 111, 235, 0.5); /* Sombra azul no foco */
+  outline: none;
+}
+
+/* Campo de telefone - ajuste de tamanho */
+.modal-content .phone-fields {
+  display: flex;
+  gap: 15px;
+}
+
+.modal-content .phone-fields input[type="text"]#ddd {
+  flex: 0 0 80px; /* Largura fixa para DDD */
+  max-width: 80px;
+  background-color: #2c2c2c; /* Fundo escuro */
+  color: #e0e0e0; /* Texto claro */
+}
+
+.modal-content .phone-fields input[type="text"]#telefone {
+  flex: 1;
+  background-color: #2c2c2c; /* Fundo escuro */
+  color: #e0e0e0; /* Texto claro */
+}
+
+/* Botão de envio */
+button[type="submit"] {
+  background-color: #8a0a10; /* Azul escuro */
+  color: white;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #811abc; /* Azul mais escuro no hover */
+  box-shadow: 0 4px 10px rgba(31, 111, 235, 0.5);
+}
+
+/* Form-row para Cidade e Estado */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .input-group.cidade {
+  flex: 1;
+  min-width: 150px;
+}
+
+.form-row .input-group.estado {
+  flex: 0 0 80px; /* Largura fixa para Estado */
+}
+
+.form-row .input-group.estado input {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #333333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 5%;
+    padding: 20px;
+  }
+
+  .phone-fields {
+    flex-direction: row; /* Manter lado a lado */
+    gap: 10px; /* Ajustar espaçamento */
+  }
+
+  .phone-fields input[type="text"]#ddd {
+    flex: 0 0 80px; /* Ajustar para melhor visualização */
+    max-width: 80px;
+  }
+
+  .phone-fields input[type="text"]#telefone {
+    flex: 1;
+  }
+
+  /* Manter form-row lado a lado no mobile */
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .form-row .input-group.cidade,
+  .form-row .input-group.estado {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .form-row .input-group.estado {
+    flex: 0 0 80px; /* Mantém a largura menor para "Estado" */
+  }
+
+  /* Aumentar espaçamento entre os campos */
+  .modal-content .input-group {
+    margin-bottom: 25px;
+  }
+
+  /* Ajustar o padding e font-size para melhor usabilidade */
+  .modal-content .input-group input,
+  .modal-content .input-group textarea {
+    padding: 18px;
+    font-size: 16px;
+  }
+
+  /* Melhorar a aparência do DDD no mobile */
+  .modal-content .phone-fields input[type="text"]#ddd {
+    max-width: 80px; /* Ajustar para melhor visualização */
+  }
+
+  /* Aumentar tamanho do botão de envio */
+  button[type="submit"] {
+    padding: 18px;
+    font-size: 20px;
+  }
+}
+
+/* Ajuste do label "UF" */
+.modal-content .input-group select:invalid {
+  color: #999999;
+}
+
+.modal-content .input-group select:valid {
+  color: #e0e0e0;
+}
+
+.modal-content .input-group select option {
+  color: #e0e0e0;
+}

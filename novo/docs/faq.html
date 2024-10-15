@@ -1,0 +1,132 @@
+﻿<html>
+<head>
+<title>PHPMailer FAQ</title>
+<style>
+body, p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+div.width {
+  width: 500px;
+  text-align: left;
+}
+</style>
+<link rel="stylesheet" href="../stylescontato.css"></head>
+
+<!-- Botão Flutuante -->
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
+
+<!-- Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Solicitar Orçamento</h2>
+    
+    <form action="../processa_formulario-2-db.php" method="post" id="contact-form">
+      <div class="input-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="telefone">Telefone</label>
+        <div class="phone-fields">
+          <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required>
+          <input type="text" id="telefone" name="telefone" placeholder="Número" required>
+        </div>
+      </div>
+      
+<div class="form-row">
+  <div class="input-group cidade">
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+  </div>
+  <div class="input-group estado">
+    <label for="estado">Estado</label>
+    <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" required>
+  </div>
+</div>
+      
+      <div class="input-group">
+        <label for="descricao">Descrição do Orçamento</label>
+        <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+      </div>
+      
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+<body bgcolor="#FFFFFF">
+<center>
+<div class="width">
+<h2>PHPMailer FAQ</h2>
+<ul>
+
+  <li><b style="background-color: #FFFF00">Q:</b> <b>I&#039;m using the SMTP mailer and I keep on getting a timeout message
+  well before the X seconds I set it for.  What gives?</b><br />
+  <b style="background-color: #FFFF00">A:</b> PHP versions 4.0.4pl1 and earlier have a bug in which sockets timeout
+  early.  You can fix this by re-compiling PHP 4.0.4pl1 with this fix:
+  <a href="timeoutfix.diff">timeoutfix.diff</a>. Otherwise you can wait for the new PHP release.<br /><br /></li>
+
+  <li><b style="background-color: #FFFF00">Q:</b> <b>I am concerned that using include files will take up too much
+  processing time on my computer.  How can I make it run faster?</b><br />
+  <b style="background-color: #FFFF00">A:</b>  PHP by itself is very fast.  Much faster than ASP or JSP running on
+  the same type of server.  This is because it has very little overhead compared
+  to its competitors and it pre-compiles all of
+  its code before it runs each script (in PHP4).  However, all of
+  this compiling and re-compiling can take up a lot of valuable
+  computer resources.  However, there are programs out there that compile
+  PHP code and store it in memory (or on mmaped files) to reduce the
+  processing immensely.  Two of these: <a href="http://apc.communityconnect.com">APC
+  (Alternative PHP Cache)</a> and <a href="http://bwcache.bware.it/index.htm">Afterburner</a>
+  (<a href="http://www.mm4.de/php4win/mod_php4_win32/">Win32 download</a>)
+  are excellent free tools that do just this.  If you have the money
+  you might also try <a href="http://www.zend.com">Zend Cache</a>, it is
+  even faster than the open source varieties.  All of these tools make your
+  scripts run faster while also reducing the load on your server. I have tried
+  them myself and they are quite stable too.<br /><br /></li>
+
+  <li><b style="background-color: #FFFF00">Q:</b> <b>What mailer gives me the best performance?</b><br />
+  <b style="background-color: #FFFF00">A:</b> On a single machine the <b>sendmail (or Qmail)</b> is fastest overall.
+  Next fastest is mail() to give you the best performance. Both do not have the overhead of SMTP.
+  If you have you have your mail server on a another machine then
+  SMTP is your only option, but you do get the benefit of redundant mail servers.<br />
+  If you are running a mailing list with thousands of names, the fastest mailers in order are: SMTP, sendmail (or Qmail), mail().<br /><br /></li>
+
+  <li><b style="background-color: #FFFF00">Q:</b> <b>When I try to attach a file with on my server I get a
+  "Could not find {file} on filesystem error".  Why is this?</b><br />
+  <b style="background-color: #FFFF00">A:</b> If you are using a Unix machine this is probably because the user
+  running your web server does not have read access to the directory in question.  If you are using Windows,
+  then the problem probably is that you have used single backslashes to denote directories (\).
+  A single backslash has a special meaning to PHP so these are not
+  valid.  Instead use double backslashes ("\\") or a single forward
+  slash ("/").<br /><br /></li>
+
+</ul>
+
+</div>
+</center>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5bbc3abfb8198a041048bebf/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+
+</html>

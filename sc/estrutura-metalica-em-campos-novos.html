@@ -1,0 +1,500 @@
+<!DOCTYPE html><html>
+  
+<!-- Embrafer# by Estrutura Metálica/3.x [XR&CO'2017], Wed, 24 Aug 2016 23:01:19 GMT -->
+<head>
+  
+    <title>Estruturas Metálicas em Campos Novos SC</title>
+	
+	    <meta charset="utf-8">
+	
+		<meta name="keywords" content="Cobertura Metálica em Campos Novos SC, Cobertura Metálica em Campos Novos, Projetos Cobertura Metálica em Campos Novos, Metálica Cobertura, Estrutura Metálica com Cobertura em Campos Novos." />
+<meta name="description" content="Estrutura Metálica em Campos Novos a Embrafer SC, Desenvolve projetos e fabrica as Estruturas Metálicas em Campos Novos, temos a melhor equipe de engenheiros e montaderes de Estruturas Metálicas." /><!-- GEO E AUTHOR -->
+
+<link rel="shortcut icon" href="../favicon.png">
+<meta name="author" content="empresarialweb" />
+<meta name="dc.language" content="br" />
+<meta name="geo.region" content="BR-SC" />
+<meta name="geo.placename" content="Florianópolis" />
+<meta name="geo.position" content="-27.590235; -48.546419" />
+<meta name="ICBM" content="-27.590235; -48.546419" />
+
+<meta name="robots" content="index, all"/>
+<meta name="robots" content="index, follow"/>
+<meta name="Googlebot" content="index, follow"/>
+<meta name="MSNBot" content="index,all" />
+<meta name="yahooBot" content="index,all" />
+<meta name="expires" content="never" />
+<meta name="distribution" content="Global" />
+<meta name="revisit-after" content="7" />
+<meta name="service" content="metal manufacturing structures" />
+<meta name="category" content="metallurgy"/>
+<meta name="service" content="manutenção estrutura metálica" />
+<meta name="category" content="metalurgia"/>
+<meta name="SEO" content="www.empresarialweb.com.br" />
+<meta name="country" content="all" />
+<meta name="coverage" content="Worldwide" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/jquery.fancybox.css">
+    <link rel="stylesheet" href="../fonts/fi/flaticon.css">
+    <link rel="stylesheet" href="../css/flexslider.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/indent.css">
+    <link rel="stylesheet" href="../rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="../rs-plugin/css/layers.css">
+    <link rel="stylesheet" href="../rs-plugin/css/navigation.css">
+    <link rel="stylesheet" href="../tuner/css/colorpicker.css">
+    <link rel="stylesheet" href="../tuner/css/styles.css">
+
+  </head><link rel="stylesheet" href="../formulario/stylescontato.css">
+  <body>
+<div class="floating-button">
+  <button id="openModalBtn">Solicitar Orçamento</button>
+</div>
+
+
+<!-- Modal -->
+  <div id="contactModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Solicitar Orçamento</h2>
+        
+        <form action="processa_formulario-2-db.php" method="post" id="contact-form">
+          <div class="input-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+          </div>
+          
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <div class="phone-fields">
+              <input type="text" id="ddd" name="ddd" placeholder="DDD" maxlength="2" required pattern="\d{2}" title="Somente números são permitidos">
+              <input type="text" id="telefone" name="telefone" placeholder="Número" maxlength="9" pattern="\d{9}" title="Somente números são permitidos" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="input-group cidade">
+              <label for="cidade">Cidade</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras são permitidas">
+            </div>
+            <div class="input-group estado">
+              <label for="estado">Estado</label>
+              <input type="text" id="estado" name="estado" placeholder="Digite" maxlength="2" pattern="[A-Za-z]{2}" title="Apenas 2 letras são permitidas" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="descricao">Descrição do Orçamento</label>
+            <textarea id="descricao" name="descricao" placeholder="Descreva o serviço ou estrutura metálica que deseja orçar" required></textarea>
+          </div>
+          
+          <!-- Campo Honeypot escondido -->
+          <div style="display:none;">
+            <label for="honeypot">Não preencha este campo se for humano:</label>
+            <input type="text" id="honeypot" name="honeypot">
+          </div>
+          
+          <!-- Campo Oculto para o Temporizador -->
+          <input type="hidden" id="form_loaded_at" name="form_loaded_at" value="">
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <!-- header page-->
+    <header>
+      <!-- site top panel-->
+      <div class="site-top-panel">
+        <div class="container p-relative">
+          <div class="row">
+            <div class="col-md-6 col-sm-7">
+              <!-- lang select wrapper-->
+              <div class="top-left-wrap font-3">
+                <div class="mail-top"><a href="../mailto:contato@estruturametalicasc.com.br"> <i class="flaticon-suntour-email"></i>contato@estruturametalicasc.com.br</a></div><span>/</span>
+                <div class="tel-top"><a href="../tel:(41) 3082-8850"> <i class="flaticon-suntour-phone"></i>(41) 3082-8850</a></div>
+              </div>
+              <!-- ! lang select wrapper-->
+            </div>
+            <div class="col-md-6 col-sm-5 text-right">
+              <div class="top-right-wrap">
+                <div class="top-login"><a href="#">Santa Catarina</a></div>
+                <div class="curr-wrap dropdown">
+                  <div>
+                    <ul>
+                      <li><a href="#" class="lang-sel icl-en">Atendimento<i class="fa fa-angle-down"></i></a>
+                        <ul>
+                          <li><a href="#">SC</a></li>
+                          <li><a href="#">PR</a></li>
+                          <li> <a href="#">RJ</a></li>
+                          <li> <a href="#">MG</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <!-- ! site top panel-->
+      <!-- Navigation panel-->
+      <nav class="main-nav js-stick">
+        <div class="full-wrapper relative clearfix container">
+          <!-- Logo ( * your text or image into link tag *)-->
+          <div class="nav-logo-wrap local-scroll"><a href="http://www.estruturametalicasc.com.br" class="logo"><img src="../img/logo.png" data-at2x="../img/logo.png" alt="Logo Embrafer Santa Catarina"></a></div>
+          <!-- Main Menu-->
+          <div class="inner-nav desktop-nav">
+            <ul class="clearlist">
+              <!-- Item With Sub-->
+              <li><a href="http://www.estruturametalicasc.com.br" class="mn-has-sub active">Início </a></li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li><a href="../empresa-estrutura-sc.html" class="mn-has-sub">Empresa </a>
+                <!-- Sub-->
+
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li class="megamenu"><a href="#" class="mn-has-sub">Serviços <i class="fa fa-angle-down button_open"></i></a>
+                <!-- Sub-->
+                <ul class="mn-sub mn-has-multi">
+                  <li class="mn-sub-multi"><a class="mn-group-title">Estrutura</a>
+                    <ul>
+                      <li><a href="../estrutura-metalica-em-santa-catarina-sc.html">Estrutura Metálica</a></li>
+                      <li><a href="../cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></li>
+                    </ul>
+                  </li>
+                  <li class="mn-sub-multi"><a class="mn-group-title">Interno</a>
+                    <ul>
+                      <li><a href="../mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a></li>
+                      <li><a href="../escada-metalica-santa-catarina-sc.html">Escada Metálica</a></li>
+                    </ul>
+                  </li>
+                  <li class="mn-sub-multi"><a class="mn-group-title">Mão de Obra</a>
+                    <ul>
+                      <li><a href="../instalacao-estrutura-santa-catarina-sc.html">Instalação de estrutura</a></li>
+                      <li><a href="../manutencao-estrutural-santa-catarina-sc.html">Manutenção estrutural</a></li>
+
+                    </ul>
+                  </li>
+                </ul>
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <!-- span /-->
+              <!-- Item With Sub-->
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item With Sub-->
+              <li><a href="../galeria.html" class="mn-has-sub">Galeria </a>
+                <!-- Sub-->
+              
+                <!-- End Sub-->
+              </li>
+              <!-- End Item With Sub-->
+              <li class="slash">/</li>
+              <!-- Item-->
+              <li><a href="../contato-estrutura-metalica-sc.html">Contato</a></li>
+              <!-- End Item-->
+              <!-- Search-->
+              <li class="search"><a href="../contato-estrutura-metalica-sc.html" class="mn-has-sub">Orçamento</a>
+              
+              </li>
+              <!-- End Search-->
+            </ul>
+          </div>
+          <!-- End Main Menu-->
+        </div>
+      </nav>
+      <!-- End Navigation panel-->
+    </header>
+    <!-- ! header page-->
+    <div class="content-body">
+      <div class="container page">
+        <div class="row">
+          <!-- content-->
+         <div class="col-md-8 mb-md-140">
+            <!-- Blog Post image-->
+            <div class="blog-item alt pb-20">
+              <!-- Blog Image-->
+              <div class="pic"><img src="../img/estrutura/estrutura-metalica-em-santa-catarina.jpg" data-at2x="../img/estrutura/estrutura-metalica-em-santa-catarina.jpg" alt="Estrutura Metálica em Campos Novos"></div>
+              <!-- title, author...-->
+              <div class="blog-item-data clearfix">
+                <h1 class="blog-title">Estruturas Metálicas em Campos Novos SC</h1>
+                
+              </div>
+              <!-- Text Intro-->
+              <p class="mb-25"><h3>Estrutura Metálica Campos Novos:</h3>
+Vantagens de usar <b>estrutura metálica em Campos Novos</b> são grandes, as quais envolve a facilidade na fabricação e instalação da <b>estrutura</b> é uma delas, onde é preciso um número bem reduzido de homens para realizar a obra quando comparado com as demais estruturas, isso por si só já reduz os custos da obra.</p>
+
+<h3>Estrutura metálica em Campos Novos SC</h3>
+<p>
+Quando comparamos a velocidade para a montagem de uma <strong>estrutura metálica em Campos Novos</strong>, com outro tipo de estrutura, o tempo para finalização pode chegar a ser 50% menor.
+Qualidade e economia para seu bolso, menor número de funcionários, tempo para finalização menor na opção da <b>estrutura metálica em Campos Novos</b>. Esses dois itens já garantem uma economia lógica para o seu investimento.
+Além de tudo uma vantagem bastante relevante neste tipo de tecnologia é o reaproveitamento, quando finalizado a <b>estrutura em Campos Novos</b> pode ser desmontada para que o material seja reaproveitado em outros lugares.
+ </p>
+              <!-- Blockquote-->
+             
+              <!-- Text Intro-->
+              <p class="mb-30"><b>A SUSTENTABILIDADE DAS ESTRUTURAS METÁLICAS Campos Novos:</b><br />
+Em resumo o desenvolvimento sustentável é essencial hoje. Isso implica em todos os setores da sociedade atual. A indústria da construção tem um papel fundamental no desenvolvimento sustentável. Não apenas pela sua contribuição na economia, mas o mais importante, os impactos significativos em termos ambientais como também sociais.
+
+</p>
+			     <p class="mb-30">O aço é identificado como um material amigo do ambiente. Isso pelo seu potencial de reaproveitamento. 
+Isso torna a <b>estrutura metálica em Campos Novos</b> imbatível quando a empresa presa pela sustentabilidade. Isso é visível no canteiro de obra, em uma <b>estrutura metálica em Campos Novos</b> comum há muito desperdício de material, como areia e demais detritos. A organização na hora da montagem é visível no canteiro de obras.</p>
+<h4>Estrutura metálica Campos Novos</h4>
+<p>
+A <strong>Estrutura metálica Campos Novos SC</strong> é adotada por grandes empresas que visam, velocidade, economia, segurança, durabilidade e sustentabilidade.
+Sim a <b>estrutura metálica Campos Novos</b>, é um modelo sustentável, cujo qual é imbatível neste quesito! 
+Material de qualidade, durável e de fácil manutenção.
+</p>
+				  
+              <!-- Post Tags-->
+             <div class="row">
+                <div class="owl-two-item">
+				
+				                  <div class="shop-item">
+                    <!-- Shop Image-->
+                    <div class="shop-media">
+                      <div class="pic"><img src="../img/estrutura/estrutura-metalica-sc.jpg" data-at2x="../img/estrutura/estrutura-metalica-sc.jpg" alt="Estrutura Metálica Campos Novos SC"></div>
+                      <div class="location">Escadas Metálicas</div>
+                    </div>
+                    <!-- Shop Content-->
+                    <div class="shop-item-body"><a href="../contato-estrutura-metalica-sc.html">
+                        <h6 class="shop-title">Projetos e Estruturas</h6></a>
+                      <div class="stars stars-5"></div>
+                      <div class="shop-price">PR </div>
+                      <p class="mb-30">Estrutura Metálica é a nossa especialidade, pode contar conosco para qualquer tipo de projeto.</p><a href="../estrutura-metalica-em-santa-catarina-sc.html" class="shop-button">Estrutura Metálica</a>
+                     
+                      <div class="action font-2">SC</div>
+                    </div>
+                    <div class="link"> <a href="../img/estrutura/estrutura-metalica-sc-g.jpg" class="fancy"><i class="fa fa-expand"></i></a></div>
+                  </div>
+                  <!-- product-->
+                
+                  <!-- ! product-->
+				   <div class="shop-item">
+                    <!-- Shop Image-->
+                    <div class="shop-media">
+                      <div class="pic"><img src="../img/estrutura/estrutura-metalica.jpg" data-at2x="../img/estrutura/estrutura-metalica.jpg" alt="Estrutura Metálica Campos Novos SC"></div>
+                      <div class="location">Estrutura Metálica</div>
+                    </div>
+                    <!-- Shop Content-->
+                    <div class="shop-item-body"><a href="#">
+                        <h6 class="shop-title">Estrutura Metálica Campos Novos SC</h6></a>
+                      <div class="stars stars-4"></div>
+                      <div class="shop-price"> BR </div>
+                      <p class="mb-30">Projetamos, fabricamos e instalamos <b>Estruturas Metálicas</b> em Todo o Brasil..</p><a href="../contato-estrutura-metalica-sc.html" class="shop-button">Contato</a>
+                      <div class="price-review"><a href="#" class="cws-button small alt add-to-cart">Orçamento</a><a href="../contato-estrutura-metalica-sc.html" class="cws-button small alt added-to-cart">Orçamento</a></div>
+                      <div class="action font-2">SC</div>
+                      <div class="action sale font-2">BR</div>
+                    </div>
+                    <div class="link"> <a href="../img/estrutura/estrutura-metalica-g.jpg" class="fancy"><i class="fa fa-expand"></i></a></div>
+                  </div>
+				  
+	
+                  <!-- product-->
+
+                  <!-- ! product-->
+                  <!-- product-->
+                 
+                  <!-- ! product-->
+                </div>
+              </div>
+            </div>
+            <!-- Blog Testimonials-->
+          
+            <!-- Leave a comment-->
+            
+           
+          </div>
+          <!-- ! content-->
+          <!-- sidebar-->
+          <div class="col-md-4 sidebar">
+            <aside class="sb-left pb-50-imp">
+              <!-- widget search-->
+              <div class="cws-widget">
+                <div class="widget-search">
+                  <form role="search" method="get" action="#" class="search-form">
+                    <label><span class="screen-reader-text">O que procura?</span>
+                      <input type="search" placeholder="O que procura?" value="" name="s" title="Search:" class="search-field">
+                    </label>
+                    <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
+                  </form>
+                </div>
+              </div>
+              <!-- ! widget search-->
+              <!-- widget category-->
+              <div class="cws-widget">
+                <div class="widget-categories">
+                  <h2 class="widget-title">Serviços</h2>
+              <ul>
+                      <li><a href="../estrutura-metalica-em-santa-catarina-sc.html">Estrutura Metálica</a></li>
+                      <li><a href="../cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></li>
+
+                      <li><a href="../mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a></li>
+                      <li><a href="../escada-metalica-santa-catarina-sc.html">Escada Metálica</a></li>
+
+                      <li><a href="../instalacao-estrutura-santa-catarina-sc.html">Instalação de estrutura</a></li>
+                      <li><a href="../manutencao-estrutural-santa-catarina-sc.html">Manutenção estrutural</a></li>
+
+                    </ul>
+                </div>
+              </div>
+              <!-- ! widget category-->
+              <!-- widget top sellers-->
+              <div class="cws-widget">
+                <div class="widget-top-sellers">
+                  <h2 class="widget-title">Mais Procurados</h2>
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="../img/empresa/cobertura-metalica.jpg" data-at2x="../img/empresa/cobertura-metalica.jpg" alt="Cobertura Metálica">
+                    <h3 class="title"><a href="../cobertura-metalica-santa-catarina-sc.html">Cobertura Metálica</a></h3>
+                    
+                  </div>
+                  <!-- ! item recent post-->
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="../img/empresa/barracao-metalico.jpg" data-at2x="../img/empresa/barracao-metalico.jpg" alt>
+                    <h3 class="title"><a href="../estrutura-metalica-em-santa-catarina-sc.html">Barracão Metálico</a></h3>
+                 
+                  </div>
+                  <!-- ! item recent post-->
+                  <!-- item recent post-->
+                  <div class="item-top-sellers clearfix"><img src="../img/empresa/mezanino-metalico.jpg" data-at2x="../img/empresa/mezanino-metalico.jpg" alt="Mezanino Metálico">
+                    <h3 class="title"><a href="../mezanino-metalico-santa-catarina-sc.html">Mezanino Metálico</a><span style="width:80%"></span></h3>
+                    
+                  </div>
+                  <!-- ! item recent post-->
+                </div>
+              </div>
+              <!-- ! widget top sellers-->
+              <!-- filter price-->
+
+              <!-- ! filter price-->
+              <!-- widget color filter-->
+              
+              <!-- widget color filter-->
+            </aside>
+          </div>
+          <!-- ! sidebar-->
+        </div>
+      </div>
+    </div>
+    <!-- footer-->
+    <footer style="background-image: url('pic/footer/footer-bg.jpg')" class="footer footer-fixed">
+      <div class="container">
+        <div class="row pb-100 pb-md-40">
+          <!-- widget footer-->
+          <div class="col-md-6 col-sm-12 mb-sm-30">
+            <div class="logo-soc clearfix">
+              <div class="footer-logo"><a href="http://www.estruturametalicasc.com.br"><img src="../img/logo-white.png" data-at2x="../img/logo-white.png" alt="Embrafer SC"></a></div>
+            </div>
+            <p class="color-g2 mt-10">Nossa empresa é referência em <b>estrutura metálica em Campos Novos</b> nossos profissionais são diferenciados pela experiência e compromisso com a qualidade na entrega dos projetos.</p>
+            <!-- social-->
+            <div class="social-link dark"><a href="#" class="cws-social fa fa-youtube"></a><a href="#" class="cws-social fa fa-facebook"></a><a href="#" class="cws-social fa fa-google-plus"></a><a href="#" class="cws-social fa fa-linkedin"></a></div>
+            <!-- ! social-->
+          </div>
+          <!-- ! widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6 mb-sm-30">
+            <div class="widget-footer">
+              <h4>Menu Rápido</h4>
+            <ul>
+			<li>
+			<a href="http://www.estruturametalicasc.com.br">Início</a></li>
+			<li><a href="../empresa-estrutura-sc.html">Empresa</a></li>
+			<li><a href="../galeria.html">Galeria</a></li>
+			<li><a href="../contato-estrutura-metalica-sc.html">Contato</a></li>
+			
+			</ul>
+			
+            </div>
+          </div>
+          <!-- end widget footer-->
+          <!-- widget footer-->
+          <div class="col-md-3 col-sm-6">
+            <div class="widget-footer">
+              <h4>Principais serviços</h4>
+              <div class="widget-tags-wrap"><a href="#" rel="tag" class="tag">Estrutura Metálica</a><a href="#" rel="tag" class="tag">Mezaninos</a><a href="#" rel="tag" class="tag">Cobertura Metálica</a><a href="#" rel="tag" class="tag">Escada Metálica</a><a href="#" rel="tag" class="tag">Manutenção</a><a href="#" rel="tag" class="tag">Instalação</a></div>
+            </div>
+          </div>
+          <!-- end widget footer-->
+        </div>
+      </div>
+      <!-- copyright-->
+      <div class="copyright"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>© Direitos 2016 <span>Desenvolvimento Próprio</span> &nbsp;&nbsp;|&nbsp;&nbsp; Embrafer Estrutura Metálica</p>
+            </div>
+            <div class="col-sm-6 text-right"><a href="http://www.estruturametalicasc.com.br" class="footer-nav">Início</a><a href="../empresa.html" class="footer-nav">Empresa</a><a href="../estrutura-metalica-em-santa-catarina-sc.html" class="footer-nav">Serviços</a><a href="../galeria.html" class="footer-nav">Galeria</a><a href="../contato-estrutura-metalica-sc.html" class="footer-nav">Contato</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- end copyright-->
+      <!-- scroll top-->
+    </footer>
+    <div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+    <!-- ! footer-->
+    <!-- login popup-->
+
+    <!-- ! login popup-->
+    <!-- news popup-->
+
+    <!-- ! news popup-->
+ 
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/owl.carousel.js"></script>
+    <script type="text/javascript" src="../js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="../js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="../js/cws_parallax.js"></script>
+    <script type="text/javascript" src="../js/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="../js/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="../js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="../js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="../rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/bg-video/cws_self_vimeo_bg.js"></script>
+    <script type="text/javascript" src="../js/bg-video/jquery.vimeo.api.min.js"></script>
+    <script type="text/javascript" src="../js/bg-video/cws_YT_bg.js"></script>
+    <script type="text/javascript" src="../js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.flexslider.js"></script>
+
+    <script type="text/javascript" src="../js/retina.min.js"></script>
+  <!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script--><script src="../formulario/scriptcontato.js"></script></body>
+
+<!-- Embrafer# by Estrutura Metálica/3.x [XR&CO'2017], Wed, 24 Aug 2016 23:01:36 GMT -->
+</html>

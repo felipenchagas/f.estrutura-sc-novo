@@ -21,6 +21,14 @@ function is_ajax_request() {
            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
 }
 
+// Função para registrar logs
+function log_error($message) {
+    $log_file = 'error_log.txt';
+    $current_time = date('Y-m-d H:i:s');
+    $message = "[{$current_time}] ERROR: {$message}\n";
+    file_put_contents($log_file, $message, FILE_APPEND);
+}
+
 // Conectar ao primeiro banco de dados
 $servidor1 = "162.214.145.189";
 $usuario1 = "empre028_felipe";
@@ -37,9 +45,12 @@ $conexao2 = new mysqli($servidor2, $usuario2, $senha2, $banco2);
 
 // Verifica se a conexão foi bem-sucedida com ambos os bancos
 if ($conexao1->connect_error || $conexao2->connect_error) {
+    $error_message = "Erro na conexão com o banco de dados. DB1: {$conexao1->connect_error}, DB2: {$conexao2->connect_error}";
+    log_error($error_message);
+    
     if (is_ajax_request()) {
         header('Content-Type: application/json');
-        echo json_encode(['status' => 'error', 'message' => 'Erro na conexão com o banco de dados.']);
+        echo json_encode(['status' => 'error', 'message' => $error_message]);
     } else {
         // Redireciona para uma página de erro ou exibe uma mensagem
         header('Location: error.html');
@@ -67,9 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Verificação do Honeypot
     if (!empty($honeypot)) {
-        // Submissão suspeita de bot
-        // Redireciona silenciosamente para success.html para evitar feedback aos bots
-        header('Location: successo.html');
+        log_error("Possível bot detectado: Honeypot preenchido.");
+        header('Location: sucesso.html');
         exit();
     }
 
@@ -78,18 +88,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $time_diff = ($current_time - $form_loaded_at) / 1000; // diferença em segundos
 
     if ($form_loaded_at == 0 || $time_diff < 5) {
-        // Submissão suspeita de bot
-        header('Location: successo.html');
+        log_error("Possível bot detectado: Submissão rápida demais. Tempo: {$time_diff} segundos.");
+        header('Location: sucesso.html');
         exit();
     }
 
     // Validação básica dos campos
     if (empty($nome) || empty($email) || empty($ddd) || empty($telefone) || empty($cidade) || empty($estado) || empty($descricao)) {
+        $error_message = "Todos os campos são obrigatórios.";
+        log_error($error_message);
+        
         if (is_ajax_request()) {
             header('Content-Type: application/json');
-            echo json_encode(['status' => 'error', 'message' => 'Todos os campos são obrigatórios.']);
+            echo json_encode(['status' => 'error', 'message' => $error_message]);
         } else {
-            // Redireciona para uma página de erro ou exibe uma mensagem
             header('Location: error.html');
         }
         exit();
@@ -97,11 +109,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validação do formato do e-mail
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error_message = "Endereço de e-mail inválido.";
+        log_error($error_message);
+
         if (is_ajax_request()) {
             header('Content-Type: application/json');
-            echo json_encode(['status' => 'error', 'message' => 'Endereço de e-mail inválido.']);
+            echo json_encode(['status' => 'error', 'message' => $error_message]);
         } else {
-            // Redireciona para uma página de erro ou exibe uma mensagem
             header('Location: error.html');
         }
         exit();
@@ -168,22 +182,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Envia o e-mail
                 $mail->send();
 
-                // Redireciona para successo.html
+                // Redireciona para sucesso.html
                 header('Location: sucesso.html');
                 exit();
             } catch (Exception $e) {
+                $error_message = "Erro ao enviar e-mail: " . $mail->ErrorInfo;
+                log_error($error_message);
+
                 if (is_ajax_request()) {
                     header('Content-Type: application/json');
-                    echo json_encode(['status' => 'error', 'message' => 'Erro ao enviar e-mail.']);
+                    echo json_encode(['status' => 'error', 'message' => $error_message]);
                 } else {
                     header('Location: error.html');
                 }
                 exit();
             }
         } else {
+            $error_message = "Erro ao inserir dados no banco de dados.";
+            log_error($error_message);
+
             if (is_ajax_request()) {
                 header('Content-Type: application/json');
-                echo json_encode(['status' => 'error', 'message' => 'Erro ao inserir dados no banco de dados.']);
+                echo json_encode(['status' => 'error', 'message' => $error_message]);
             } else {
                 header('Location: error.html');
             }
@@ -192,9 +212,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt1->close();
         $stmt2->close();
     } else {
+        $error_message = "Erro ao preparar a consulta no banco de dados.";
+        log_error($error_message);
+
         if (is_ajax_request()) {
             header('Content-Type: application/json');
-            echo json_encode(['status' => 'error', 'message' => 'Erro ao preparar a consulta no banco de dados.']);
+            echo json_encode(['status' => 'error', 'message' => $error_message]);
         } else {
             header('Location: error.html');
         }
@@ -205,9 +228,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexao1->close();
     $conexao2->close();
 } else {
+    $error_message = "Método de requisição inválido.";
+    log_error($error_message);
+
     if (is_ajax_request()) {
         header('Content-Type: application/json');
-        echo json_encode(['status' => 'error', 'message' => 'Método de requisição inválido.']);
+        echo json_encode(['status' => 'error', 'message' => $error_message]);
     } else {
         header('Location: error.html');
     }

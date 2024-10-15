@@ -29,9 +29,9 @@ $conexao1 = new mysqli($servidor1, $usuario1, $senha1, $banco1);
 
 // Conectar ao segundo banco de dados (Locaweb)
 $servidor2 = "localhost";
-$usuario2 = "primeiro_estrusc";
+$usuario2 = "quarto_estrusc";
 $senha2 = "uRXA1r9Z7pv~Cw3"; // **ATENÇÃO:** Alterar imediatamente
-$banco2 = "primeiro_estruturasc";
+$banco2 = "quarto_estruturasc";
 $conexao2 = new mysqli($servidor2, $usuario2, $senha2, $banco2);
 
 // Verifica se a conexão foi bem-sucedida com ambos os bancos

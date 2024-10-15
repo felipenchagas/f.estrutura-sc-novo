@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($honeypot)) {
         // Submissão suspeita de bot
         error_log("Honeypot detectado. Submissão bloqueada.");
-        header('Location: successo.html');
+        header('Location: https://estruturametalicasc.com.br/sucesso');
         exit();
     }
 
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($form_loaded_at == 0 || $time_diff < 5) {
         error_log("Submissão suspeita de bot. Tempo de submissão muito rápido.");
-        header('Location: successo.html');
+        header('Location: https://estruturametalicasc.com.br/sucesso');
         exit();
     }
 
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Content-Type: application/json');
             echo json_encode(['status' => 'error', 'message' => 'Todos os campos são obrigatórios.']);
         } else {
-            header('Location: error.html');
+            header('Location: https://estruturametalicasc.com.br/error');
         }
         exit();
     }
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Content-Type: application/json');
             echo json_encode(['status' => 'error', 'message' => 'Endereço de e-mail inválido.']);
         } else {
-            header('Location: error.html');
+            header('Location: https://estruturametalicasc.com.br/error');
         }
         exit();
     }
@@ -179,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->send();
 
             error_log("E-mail enviado com sucesso.");
-            header('Location: sucesso.html');
+            header('Location: https://estruturametalicasc.com.br/sucesso');
             exit();
         } catch (Exception $e) {
             error_log("Erro ao enviar e-mail: " . $e->getMessage());
@@ -187,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header('Content-Type: application/json');
                 echo json_encode(['status' => 'error', 'message' => 'Erro ao enviar e-mail.']);
             } else {
-                header('Location: error.html');
+                header('Location: https://estruturametalicasc.com.br/error');
             }
             exit();
         }
@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Content-Type: application/json');
         echo json_encode(['status' => 'error', 'message' => 'Método de requisição inválido.']);
     } else {
-        header('Location: error.html');
+        header('Location: https://estruturametalicasc.com.br/error');
     }
     exit();
 }

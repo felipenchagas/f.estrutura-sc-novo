@@ -24,14 +24,14 @@ function is_ajax_request() {
 $servidor1 = "162.214.145.189";
 $usuario1 = "empre028_felipe";
 $senha1 = "Iuh86gwt--@Z123"; // **ATENÇÃO:** Alterar imediatamente
-$banco1 = "empre028_estruturapr";
+$banco1 = "empre028_estruturasc";
 $conexao1 = new mysqli($servidor1, $usuario1, $senha1, $banco1);
 
 // Conectar ao segundo banco de dados (Locaweb)
 $servidor2 = "localhost";
-$usuario2 = "primeiro_estrupr";
-$senha2 = "uRXA1r9Z7pv~Cw2"; // **ATENÇÃO:** Alterar imediatamente
-$banco2 = "primeiro_estruturapr";
+$usuario2 = "primeiro_estrusc";
+$senha2 = "uRXA1r9Z7pv~Cw3"; // **ATENÇÃO:** Alterar imediatamente
+$banco2 = "primeiro_estruturasc";
 $conexao2 = new mysqli($servidor2, $usuario2, $senha2, $banco2);
 
 // Verifica se a conexão foi bem-sucedida com ambos os bancos
